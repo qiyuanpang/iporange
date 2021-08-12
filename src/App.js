@@ -69,101 +69,6 @@ function App(props) {
     }
   }, [isLogin]);
 
-  useEffect(() => {
-    const urls = localStorage.getItem('searchresults-urls').split('/,');
-    const texts = localStorage.getItem('searchresults-texts').split('/,');
-    const sections = localStorage.getItem('searchresults-sections').split('/,');
-    if (urls) {
-      let results = [];
-      for (let k=0; k<urls.length; k++) {
-        results.push({'text': texts[k], 'url': urls[k], 'section': sections[k]})
-      }
-      setSearchData(results);
-    }
-  }, [searchinput]);
-  
-  // // console.log(symbols)
-  function SubmitUserData(data) {
-    // const [isExistent, setIsExistent] = useState(0);
-    
-    const email = data.email;
-    const username = data.username;
-    const password = data.password;
-    const url = "/api/signup/" + email + "/" + username + "/" + password;
-    fetch(url).then(response => {
-        return response.json()
-    }).then(existornot => {
-        // setIsExistent(existornot[0].EXIST);
-        if (existornot[0].EXIST === 1) {
-          setUserdata({Email: email, Username: username, Password: password, Message: 'The email or username entered exists, please try agian.'})
-        } else {
-          localStorage.setItem('loginuser', username)
-          setIsLogin(true);
-          window.location.href = '/';
-        }
-    })
-  };
-
-  function CheckEmail(data) {
-    // const [isExistent, setIsExistent] = useState(0);
-    
-    const email = data.email;
-    const url = "/api/forgotpsw/" + email;
-    fetch(url).then(response => {
-        return response.json()
-    }).then(existornot => {
-        // setIsExistent(existornot[0].EXIST);
-        if (existornot[0].EXIST === 0) {
-          setUserdata({Email: email, Username: '', Message: 'The email you entered does not exist in our database, please try again or create a new account!'})
-        } else {
-          // localStorage.setItem('loginuser', existornot[0].Username)
-          // setIsLogin(true);
-          setUserdata({Email: email, Username: '', Message: 'An email has been sent your email address, please use it to reset your password!'})
-          // window.location.href = '/resetpassword';
-        }
-    })
-  };
-
-  function ResetPSW(data) {
-    // const [isExistent, setIsExistent] = useState(0);
-    
-    const username = data.username;
-    const password = data.password;
-    const url = "/api/resetpsw/" + username + "/" + password;
-    fetch(url).then(response => {
-        return response.json()
-    }).then(existornot => {
-        // setIsExistent(existornot[0].EXIST);
-        if (existornot[0].EXIST === 0) {
-          setUserdata({Username: ''})
-        } else {
-          // localStorage.setItem('loginuser', existornot[0].Username)
-          // setIsLogin(true);
-          setUserdata({Username: '', Message: 'Your password has been changed successfully! Please sign up later!'})
-          window.location.href = '/login';
-        }
-    })
-  };
-
-  function CheckUserData(data) {
-    // const [isExistent, setIsExistent] = useState(0);
-    
-    const email = data.email;
-    const password = data.password;
-    const url = "/api/login/" + email + "/" + password;
-    fetch(url).then(response => {
-        return response.json()
-    }).then(existornot => {
-        // setIsExistent(existornot[0].EXIST);
-        if (existornot[0].EXIST === 0) {
-          setUserdata({Email: email, Username: '', Password: password, Message: 'Email or password incorrect, please try agian.'})
-        } else {
-          localStorage.setItem('loginuser', existornot[0].Username)
-          setIsLogin(true);
-          window.location.href = '/';
-        }
-    })
-  };
 
   function Search(input) {
     const url = "/api/search/" + input;
@@ -209,59 +114,59 @@ function App(props) {
           <Route path='/' key="route-home" exact>
             <HomePage key="home" />
           </Route>
-          <Route path='/upcomingipos' exact key="route-upcomingipos">
+          {/* <Route path='/upcomingipos' exact key="route-upcomingipos">
             <UpcomingIPOsPage key="upcomingipos"/>
-          </Route>
-          <Route path='/filedipos' key="route-filedipos">
+          </Route> */}
+          {/* <Route path='/filedipos' key="route-filedipos">
             <FiledIPOsPage key="filedipos"/>
-          </Route>
-          <Route path='/ipopipeline' key="route-ipopipeline">
+          </Route> */}
+          {/* <Route path='/ipopipeline' key="route-ipopipeline">
             <IPOpipelinePage key="ipopipeline"/>
-          </Route>
-          <Route path='/ipos' exact key="route-allipos">
+          </Route> */}
+          {/* <Route path='/ipos' exact key="route-allipos">
             <AllIPOsPage key="allipos" />
-          </Route >
-          <Route path="/ipos/:Symbol/:Subpage"  key={"route-symbol-subpage"}>
+          </Route > */}
+          {/* <Route path="/ipos/:Symbol/:Subpage"  key={"route-symbol-subpage"}>
             <OneIPOPage key={"ipos-symbol-subpage"} User={loginedUser} priced={true}/>
-          </Route>
-          <Route path="/upcomingipos/:Symbol/:Subpage" key={"route-upcoming-symbol-subpage"}>
+          </Route> */}
+          {/* <Route path="/upcomingipos/:Symbol/:Subpage" key={"route-upcoming-symbol-subpage"}>
             <UpcomingOneIPOPage key={"upcoming-symbol-subpage"} User={loginedUser} priced={false}/>
-          </Route>
-          <Route path='/signup' exact key="route-signup">
+          </Route> */}
+          {/* <Route path='/signup' exact key="route-signup">
             <SignUpPage key="signup" onSubmit={SubmitUserData} Userdata={userdata}/>
-          </Route>
-          <Route path='/login' exact key="route-login">
+          </Route> */}
+          {/* <Route path='/login' exact key="route-login">
             <LoginPage key="login" onLogin={CheckUserData} Userdata={userdata}/>
-          </Route>
-          <Route path='/sectors/:sectorurl' key={"route-sector"}>
+          </Route> */}
+          {/* <Route path='/sectors/:sectorurl' key={"route-sector"}>
             <SectorPage key={"sectorpage-sector"} User={loginedUser}/>
-          </Route>
-          <Route path='/underwriters/:underwriterurl' key={"route-underwriter"}>
+          </Route> */}
+          {/* <Route path='/underwriters/:underwriterurl' key={"route-underwriter"}>
             <UnderwriterPage key={"underwriterpage-underwriter"} User={loginedUser}/>
-          </Route>
-          <Route path='/sectors' exact key="route-allsectors">
+          </Route> */}
+          {/* <Route path='/sectors' exact key="route-allsectors">
             <AllSectorsPage key="allsectors" loginedUser={loginedUser}/>
-          </Route>
-          <Route path='/underwriters' exact key="route-allunderwriters">
+          </Route> */}
+          {/* <Route path='/underwriters' exact key="route-allunderwriters">
             <AllUnderwritersPage key="allunderwriters" loginedUser={loginedUser}/>
-          </Route>
-          <Route path={'/search'}  key={"route-search"}>
+          </Route> */}
+          {/* <Route path={'/search'}  key={"route-search"}>
             <SearchResultsPage key={"search-results"} input={searchdata}/>
-          </Route>
-          <Route path='/contactus' exact key='route-contactus'>
+          </Route> */}
+          {/* <Route path='/contactus' exact key='route-contactus'>
             <ContactUSPage />
-          </Route>
-          <Route path='/otherlinks' exact key='route-otherlinks'>
+          </Route> */}
+          {/* <Route path='/otherlinks' exact key='route-otherlinks'>
             <OtherLinksPage />
-          </Route>
-          <Route path='/forgotpassword' exact key='route-forgotpassword'>
+          </Route> */}
+          {/* <Route path='/forgotpassword' exact key='route-forgotpassword'>
             <ForgotPSWPage onCheck={CheckEmail} Userdata={userdata}/>
-          </Route>
-          <Route path='/resetpassword/:username' key='route-resetpassword'>
+          </Route> */}
+          {/* <Route path='/resetpassword/:username' key='route-resetpassword'>
             <ResetPSWPage onResetPSW={ResetPSW} Userdata={userdata}/>
-          </Route>
+          </Route> */}
         </Switch>
-        <FooterPage />
+        {/* <FooterPage /> */}
       </div>
   )
 }
