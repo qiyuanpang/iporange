@@ -2,6 +2,7 @@ import {useRef} from 'react';
 import { useState, useEffect } from 'react';
 import { Form, Button, FormControl, Container, FormGroup, Label, Input} from 'react-bootstrap';
 import styled from 'styled-components';
+import PrefixPage from './Prefix';
 
 const Styles = styled.div`
 .center {
@@ -80,7 +81,7 @@ function SignUpPage(props) {
                         <Button variant="primary" type="submit" className="middle" size="lg">
                             Sign Up Now
                         </Button>
-                        <Button variant="light" href='/login' className="end">
+                        <Button variant="light" href={PrefixPage+'/login'} className="end">
                             Login here
                         </Button>
                     </div>

@@ -8,6 +8,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Badge, Navbar, Nav, Form, Button, NavDropdown, FormControl, Container} from 'react-bootstrap';
 import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table';
+import PrefixPage from './Prefix';
 
 const Styles = styled.div`
 .center {
@@ -209,21 +210,21 @@ function ShowAuth(text, num, auth, url) {
             return (
                 
                     <Badge bg='light' text='dark' pill>
-                        <a href={url}>{`${text}    `}</a>
+                        <a href={PrefixPage+url}>{`${text}    `}</a>
                         <span style={{color: '#21CA07'}}>{`${(num*100).toFixed(2)} %`}</span>
                     </Badge>
             )
         } else if (num < 0) {
             return (
                     <Badge bg='light' text='dark' pill>
-                        <a href={url}>{`${text}    `}</a>
+                        <a href={PrefixPage+url}>{`${text}    `}</a>
                         <span style={{color: '#EB2D16'}}>{`${(num*100).toFixed(2)} %`}</span>
                     </Badge>
             )
         } else {
             return (
                     <Badge bg='light' text='dark' pill>
-                        <a href={url}>{`${text}    `}</a>
+                        <a href={PrefixPage+url}>{`${text}    `}</a>
                         <span style={{color: '#566573'}}>{`${(num*100).toFixed(2)} %`}</span>
                     </Badge>
             )
@@ -231,8 +232,8 @@ function ShowAuth(text, num, auth, url) {
     } else {
         return (
                 <Badge bg='light' text='dark' pill>
-                    <a href={url}>{text+"    "}</a>
-                    <span style={{color: '#566573'}}><a href='/login' style={{color: '#566573'}}>{'hiden'}</a></span>
+                    <a href={PrefixPage+url}>{text+"    "}</a>
+                    <span style={{color: '#566573'}}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{'hiden'}</a></span>
                 </Badge>
         )
     }
@@ -385,7 +386,7 @@ function OneIPOPage(props){
                             </span>
                         </div>
                         <div key={Symbol+"_in_row_3"}>
-                            <p>{"Similar IPOs:  "}{Auth ? similaripos.map(item => {return (<span key={"similar_"+Symbol+"_"+item}><a href={'/ipos/'+item+'/overview'}>{`${item}    `}</a></span>)}) : <span key={"similar_"+Symbol+"_hiden"}><a href='/login' style={{color: '#566573'}}>{"hiden"}</a></span>}</p>
+                            <p>{"Similar IPOs:  "}{Auth ? similaripos.map(item => {return (<span key={"similar_"+Symbol+"_"+item}><a href={PrefixPage+'/ipos/'+item+'/overview'}>{`${item}    `}</a></span>)}) : <span key={"similar_"+Symbol+"_hiden"}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{"hiden"}</a></span>}</p>
                         </div>
                     </div>
                 </div>
@@ -434,19 +435,19 @@ function OneIPOPage(props){
                 <div className="col-12">
                     <ul className="nav nav-tabs" style={{width: "100%"}}>
                         <li className="nav-item" key={Symbol+"-page-1"}>
-                            <a className={"nav-link"+((Subpage==="overview") ? " active":"")} aria-current="page" href={"/ipos/"+Symbol+"/overview"}>Overview</a>
+                            <a className={"nav-link"+((Subpage==="overview") ? " active":"")} aria-current="page" href={PrefixPage+"/ipos/"+Symbol+"/overview"}>Overview</a>
                         </li>
                         <li className="nav-item" key={Symbol+"-page-2"}>
-                            <a className={"nav-link"+((Subpage==="news") ? " active":"")} href={"/ipos/"+Symbol+"/news"}>News</a>
+                            <a className={"nav-link"+((Subpage==="news") ? " active":"")} href={PrefixPage+"/ipos/"+Symbol+"/news"}>News</a>
                         </li>
                         <li className="nav-item" key={Symbol+"-page-3"}>
-                            <a className={"nav-link"+((Subpage==="comments") ? " active":"")} href={"/ipos/"+Symbol+"/comments"}>Comments</a>
+                            <a className={"nav-link"+((Subpage==="comments") ? " active":"")} href={PrefixPage+"/ipos/"+Symbol+"/comments"}>Comments</a>
                         </li>
                         <li className="nav-item" key={Symbol+"-page-4"}>
-                            <a className={"nav-link"+((Subpage==="historicalquotes") ? " active":"")} href={"/ipos/"+Symbol+"/historicalquotes"}>Historical Quotes</a>
+                            <a className={"nav-link"+((Subpage==="historicalquotes") ? " active":"")} href={PrefixPage+"/ipos/"+Symbol+"/historicalquotes"}>Historical Quotes</a>
                         </li>
                         <li className="nav-item" key={Symbol+"-page-5"}>
-                            <a className={"nav-link"+((Subpage==="profile") ? " active":"")} href={"/ipos/"+Symbol+"/profile"}>Profile</a>
+                            <a className={"nav-link"+((Subpage==="profile") ? " active":"")} href={PrefixPage+"/ipos/"+Symbol+"/profile"}>Profile</a>
                         </li>
                     </ul>
                 </div>

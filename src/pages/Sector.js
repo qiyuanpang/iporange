@@ -37,10 +37,10 @@ function SectorPage(props) {
         <Styles>
             <div className="center" key={sector.url+'-div-container'}>
                 <div className="row" key={sector.name+"__row_2"}>
-                    <SectorsList title={sector.name} items={[sector]} key={sector.url+"-sulist"} Auth={Auth}/>
+                    <SectorsList title={sector.name} items={[sector]} key={sector.url+"-sulist"} Auth={Auth} prefix={''}/>
                 </div>
                 <div className="row" key={sector.url+"_row_3"}>
-                    <IpoList key={sector.name+"-ipos"} ipos={ipos} title={'IPOs in '+sector.name} type='gain' prefix={'sector-'+sector.name}/>
+                    <IpoList key={sector.name+"-ipos"} ipos={ipos} title={'IPOs in '+sector.name} type='gain' prefix={''}/>
                 </div>
             </div>
         </Styles>

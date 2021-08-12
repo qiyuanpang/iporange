@@ -1,6 +1,7 @@
 import {useRef} from 'react';
 import { Navbar, Nav, Form, Button, NavDropdown, FormControl, Container} from 'react-bootstrap';
 import styled from 'styled-components';
+import PrefixPage from '../../pages/Prefix';
 
 const Styles = styled.div`
 .center {
@@ -51,10 +52,10 @@ function MainNavigation(props) {
                 // </ul>
                 <div className="right1" key="loginsignup">
                     <Button variant="outline-success">
-                        <Nav.Link href='/login'>Login</Nav.Link>
+                        <Nav.Link href={PrefixPage+'/login'}>Login</Nav.Link>
                     </Button>
                     <Button variant="outline-success">
-                        <Nav.Link href='/signup'>Sign Up</Nav.Link>
+                        <Nav.Link href={PrefixPage+'/signup'}>Sign Up</Nav.Link>
                     </Button>
                 </div>
                 
@@ -73,7 +74,7 @@ function MainNavigation(props) {
             <div className="center" key='navigation-div-0'>
                 <Navbar className="justify-content-center" bg="light" expand="lg" >
                     <Container>
-                        <Navbar.Brand href="/" >IPO Secretary</Navbar.Brand>
+                        <Navbar.Brand href="/" >IPO Range</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
                             <Nav
@@ -82,12 +83,12 @@ function MainNavigation(props) {
                             navbarScroll
                             >
                                 <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/#/upcomingipos">Upcoming IPOs</Nav.Link>
+                                <Nav.Link href={PrefixPage+"/upcomingipos"}>Upcoming IPOs</Nav.Link>
                                 <NavDropdown title="Categories" id="navbarScrollingDropdown">
-                                    <NavDropdown.Item href="/#/ipos">Past IPOs</NavDropdown.Item>
-                                    <NavDropdown.Item href="/#/sectors">Sectors</NavDropdown.Item>
+                                    <NavDropdown.Item href={PrefixPage+"/ipos"}>Past IPOs</NavDropdown.Item>
+                                    <NavDropdown.Item href={PrefixPage+"/sectors"}>Sectors</NavDropdown.Item>
                                     {/* <NavDropdown.Divider /> */}
-                                    <NavDropdown.Item href="/#/underwriters">Underwriters</NavDropdown.Item>
+                                    <NavDropdown.Item href={PrefixPage+"/underwriters"}>Underwriters</NavDropdown.Item>
                                 </NavDropdown>
                                 {/* <Nav.Link href="#" disabled>
                                     Link

@@ -1,6 +1,7 @@
 // import classes from "./Table.module.css";
 import { Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import PrefixPage from '../../pages/Prefix';
 
 function ShowNum(num) {
     if (num > 0) {
@@ -72,7 +73,7 @@ function TableData(props, type) {
                 <tr key={symbol+"-gainer-"+Math.floor(Math.random() * 12345).toString()} >
                     <td>{company}</td>
                     <td>
-                        <Link key={symbol+"link"} to={"/ipos/"+symbol} >{symbol}</Link>
+                        <Link key={symbol+"link"} to={PrefixPage+"/ipos/"+symbol} >{symbol}</Link>
                         {/* <Link onClick={whichsymbol} key={symbol+"link"} >{symbol}</Link> */}
                         {/* <a className="btn btn-primary btn-lg" aria-disabled="true" key={symbol+"link"} onClick={whichsymbol}>{symbol}</a> */}
                     </td>
@@ -94,7 +95,7 @@ function TableData(props, type) {
                 <tr key={symbol+"-losser-"+Math.floor(Math.random() * 12345).toString()} >
                     <td>{company}</td>
                     <td>
-                        <Link key={symbol+"link"} to={"/ipos/"+symbol} >{symbol}</Link>
+                        <Link key={symbol+"link"} to={PrefixPage+"/ipos/"+symbol} >{symbol}</Link>
                         {/* <Link onClick={whichsymbol} key={symbol+"link"} >{symbol}</Link> */}
                         {/* <a className="btn btn-primary btn-lg" aria-disabled="true" key={symbol+"link"} onClick={whichsymbol}>{symbol}</a> */}
                     </td>

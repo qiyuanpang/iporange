@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table';
 import { Badge } from 'react-bootstrap';
+import PrefixPage from '../../pages/Prefix';
 
 
 function ShowNum(num, Auth) {
@@ -182,7 +183,7 @@ function Table1({ columns, data, StartDate, EndDate, prefix, Auth}) {
                       //   console.log(cell.value)
                           if (cell.value) {
                               // console.log(cell.value.replace('&','').replace(' ','').toLowerCase())
-                              return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={"/underwriters/"+cell.value.replace('-','').replace('.', '').replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
+                              return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={prefix+"/underwriters/"+cell.value.replace('-','').replace('.', '').replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
                           }
                       } else if (cell.column.Header === 'AVG Offer Return' || cell.column.Header === 'AVG Max Return' ) {
                           return ShowNum(cell.value, Auth)
@@ -278,7 +279,7 @@ function Table({ columns, data, StartDate, EndDate, prefix, Auth}) {
                     //   console.log(cell.value)
                         if (cell.value) {
                             // console.log(cell.value.replace('&','').replace(' ','').toLowerCase())
-                            return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={"/underwriters/"+cell.value.replace('-','').replace('.', '').replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
+                            return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={prefix+"/underwriters/"+cell.value.replace('-','').replace('.', '').replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
                         }
                     } else if (cell.column.Header === 'AVG Offer Return' || cell.column.Header === 'AVG Max Return' ) {
                         return ShowNum(cell.value, Auth)
@@ -408,7 +409,7 @@ function UnderwritersList(props) {
                     {props.title}
                 </h2>
                 <Styles>
-                    <Table columns={columns} data={items} key={"sulist-underwriters-"+Math.floor(Math.random() * 13254)} Auth={props.Auth}/>
+                    <Table columns={columns} data={items} key={"sulist-underwriters-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
                 </Styles>
             </div>
         );
@@ -416,10 +417,10 @@ function UnderwritersList(props) {
         return (
             <div>
                 <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
-                    <a href='/underwriters'>{"Underwriters"}</a>{' > '+props.title}
+                    <a href={PrefixPage+'/underwriters'}>{"Underwriters"}</a>{' > '+props.title}
                 </h2>
                 <Styles>
-                    <Table1 columns={columns} data={items} key={"sulist-underwriters-"+Math.floor(Math.random() * 13254)} Auth={props.Auth}/>
+                    <Table1 columns={columns} data={items} key={"sulist-underwriters-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
                 </Styles>
             </div>
         );

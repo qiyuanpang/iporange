@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table';
 import { Badge } from 'react-bootstrap';
+import PrefixPage from '../../pages/Prefix';
 
 
 function ShowNum(num, Auth) {
@@ -183,7 +184,7 @@ function Table1({ columns, data, StartDate, EndDate, prefix, Auth}) {
                     //   console.log(cell.value)
                         if (cell.value) {
                             // console.log(cell.value.replace('&','').replace(' ','').toLowerCase())
-                            return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={"/sectors/"+cell.value.replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
+                            return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={prefix+"/sectors/"+cell.value.replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
                         }
                     } else if (cell.column.Header === 'AVG Offer Return' || cell.column.Header === 'AVG Max Return' ) {
                         return ShowNum(cell.value, Auth)
@@ -279,7 +280,7 @@ function Table({ columns, data, StartDate, EndDate, prefix, Auth}) {
                     //   console.log(cell.value)
                         if (cell.value) {
                             // console.log(cell.value.replace('&','').replace(' ','').toLowerCase())
-                            return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={"/sectors/"+cell.value.replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
+                            return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={prefix+"/sectors/"+cell.value.replace('&','').replace(/\s/g,'').toLowerCase()} >{cell.render('Cell')}</Link></td>
                         }
                     } else if (cell.column.Header === 'AVG Offer Return' || cell.column.Header === 'AVG Max Return' ) {
                         return ShowNum(cell.value, Auth)
@@ -409,7 +410,7 @@ function SectorsList(props) {
                   {props.title}
               </h2>
               <Styles>
-                  <Table columns={columns} data={items} key={"sulist-sectors-"+Math.floor(Math.random() * 13254)} Auth={props.Auth}/>
+                  <Table columns={columns} data={items} key={"sulist-sectors-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
               </Styles>
           </div>
       );
@@ -417,10 +418,10 @@ function SectorsList(props) {
       return (
         <div>
             <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
-                <a href='/sectors'>{"Sectors"}</a>{' > '+props.title}
+                <a href={PrefixPage+'/sectors'}>{"Sectors"}</a>{' > '+props.title}
             </h2>
             <Styles>
-                <Table1 columns={columns} data={items} key={"sulist-sectors-"+Math.floor(Math.random() * 13254)} Auth={props.Auth}/>
+                <Table1 columns={columns} data={items} key={"sulist-sectors-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
             </Styles>
         </div>
     );

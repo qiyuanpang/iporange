@@ -6,6 +6,7 @@ import IpoListLosers from '../components/ipos/IpoListLosers';
 import UpcomingIPOsList from '../components/ipos/UpcomingIPOsList';
 import styled from 'styled-components';
 import FooterPage from './Footer';
+import PrefixPage from './Prefix';
 
 const Styles = styled.div`
 
@@ -33,9 +34,9 @@ function ShowPeriod(days) {
 
 function WhichType(type, data) {
     if (type === 'Gainers') {
-        return <IpoListGainers key="topgainers" ipos={data}/>
+        return <IpoListGainers key="topgainers" ipos={data} prefix={''}/>
     } else if (type === 'Losers') {
-        return <IpoListLosers key="toplosers" ipos={data} />
+        return <IpoListLosers key="toplosers" ipos={data} prefix={''}/>
     }
 }
 

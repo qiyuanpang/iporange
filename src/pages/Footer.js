@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { Navbar, Nav, Form, Button, NavDropdown, FormControl, Container} from 'react-bootstrap';
+import PrefixPage from "./Prefix";
 
 
 const Styles = styled.div`
@@ -38,8 +39,8 @@ const FooterPage = () => (
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                     >
-                        <Nav.Link href="/otherlinks" className='text'>OTHER LINKS</Nav.Link>
-                        <Nav.Link href="/contactus" className='text'>CONTACT US</Nav.Link>
+                        <Nav.Link href={PrefixPage+"/otherlinks"} className='text'>OTHER LINKS</Nav.Link>
+                        <Nav.Link href={PrefixPage+"/contactus"} className='text'>CONTACT US</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

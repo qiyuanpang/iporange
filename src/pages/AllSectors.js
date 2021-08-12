@@ -29,7 +29,7 @@ function AllSectorsPage(props) {
         <Styles>
             <div className="center" key="allsectors-div">
                 {/* <SUList title="All Sectors" items={allsectors} key={"allsectors-sulist"} SorU={"sectors"} Auth={Auth}/> */}
-                <SectorsList title="All Sectors" items={allsectors}  key={"allsectors-sulist"} Auth={Auth}/>
+                <SectorsList title="All Sectors" items={allsectors}  key={"allsectors-sulist"} Auth={Auth} prefix={''}/>
             </div>
         </Styles>
     )

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { Form, Button, FormControl, Container, FormGroup, Label, Input} from 'react-bootstrap';
 import styled from 'styled-components';
+import PrefixPage from './Prefix';
 
 const Styles = styled.div`
 .center {
@@ -71,13 +72,13 @@ function LoginPage(props) {
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group> */}
                     <div className='buttons'>
-                        <Button variant="light" href='/forgotpassword' className="start">
+                        <Button variant="light" href={PrefixPage+'/forgotpassword'} className="start">
                             Forgot password？
                         </Button>
-                        <Button variant="primary" type="submit" className="middle" size="lg">
+                        <Button variant="primary" type={PrefixPage+"submit"} className="middle" size="lg">
                             Login Now
                         </Button>
-                        <Button variant="light" href='/signup' className="end">
+                        <Button variant="light" href={PrefixPage+'/signup'} className="end">
                             Sign Up here
                         </Button>
                     </div>

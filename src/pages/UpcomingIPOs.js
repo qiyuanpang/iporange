@@ -38,7 +38,7 @@ function UpcomingIPOsPage() {
     return (
         <Styles>
             <div className="center" key='upcomingipos-b4List'>
-                <UpcomingIPOsList items={upcomingipos} title='Upcoming IPOs' key="upcomingiposlist" />
+                <UpcomingIPOsList items={upcomingipos} title='Upcoming IPOs' key="upcomingiposlist" prefix={''}/>
            </div>
         </Styles>
 

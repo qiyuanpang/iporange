@@ -35,6 +35,7 @@ import ForgotPSWPage from './pages/ForgotPSW';
 import ResetPSWPage from './pages/ResetPSW';
 
 import styled from 'styled-components';
+import PrefixPage from './pages/Prefix';
 
 const Styles = styled.div`
 .App {
@@ -69,7 +70,7 @@ function App(props) {
     }
   }, [isLogin]);
 
-  //useEffect(() => {
+  // useEffect(() => {
   //  const urls = localStorage.getItem('searchresults-urls').split('/,');
   //  const texts = localStorage.getItem('searchresults-texts').split('/,');
   //  const sections = localStorage.getItem('searchresults-sections').split('/,');
@@ -80,7 +81,7 @@ function App(props) {
   //    }
   //    setSearchData(results);
   //  }
-  //}, [searchinput]);
+  // }, [searchinput]);
   
   // // console.log(symbols)
   function SubmitUserData(data) {
@@ -140,7 +141,7 @@ function App(props) {
           // localStorage.setItem('loginuser', existornot[0].Username)
           // setIsLogin(true);
           setUserdata({Username: '', Message: 'Your password has been changed successfully! Please sign up later!'})
-          window.location.href = '/login';
+          window.location.href = PrefixPage + '/login';
         }
     })
   };
@@ -185,13 +186,13 @@ function App(props) {
           texts.push(data.results[k].text)
         }
       }
-      localStorage.setItem('searchresults-urls', urls);
-      localStorage.setItem('searchresults-sections', sections);
-      localStorage.setItem('searchresults-texts', texts);
+      // localStorage.setItem('searchresults-urls', urls);
+      // localStorage.setItem('searchresults-sections', sections);
+      // localStorage.setItem('searchresults-texts', texts);
       
-      // setSearchData(data);
-      setSearchInput(data.input);
-      window.location.href = '/#/search';
+      setSearchData(data.results);
+      // setSearchInput(data.input);
+      window.location.href = PrefixPage+'/search';
       // window.location.href = '/search/input?'+searchdata.input;
     })
   };

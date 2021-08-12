@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table';
 import { Badge } from 'react-bootstrap';
+import PrefixPage from '../../pages/Prefix';
 
 
 function ShowNum(num) {
@@ -110,7 +111,7 @@ const Styles = styled.div`
   }
 `
 
-function Table({ columns, data}) {
+function Table({ columns, data, prefix}) {
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -189,7 +190,7 @@ function Table({ columns, data}) {
                 {row.cells.map(cell => {
                     {if (cell.column.Header === 'Symbol') {
                     //   console.log(cell.value)
-                        return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={"/ipos/"+cell.value+"/overview"} >{cell.render('Cell')}</Link></td>
+                        return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={prefix+ "/ipos/"+cell.value+"/overview"} >{cell.render('Cell')}</Link></td>
                     } else if (cell.column.Header === 'Offer Return' || cell.column.Header === '1st Day MaxReturn' || cell.column.Header === '1st Week MaxReturn') {
                         return ShowNum(cell.value)
                     } else {
@@ -299,7 +300,7 @@ function IpoListGainers(props) {
     return (
         <div>          
             <Styles>
-                <Table columns={columns} data={props.ipos} key={ Math.floor(Math.random() * 12345576)}/>
+                <Table columns={columns} data={props.ipos} key={ Math.floor(Math.random() * 12345576)} prefix={props.prefix}/>
             </Styles>
         </div>
     );

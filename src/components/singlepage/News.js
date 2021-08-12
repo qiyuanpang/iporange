@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import PrefixPage from '../../pages/Prefix';
 
 function NewsList(props) {
     return props.map(item => {

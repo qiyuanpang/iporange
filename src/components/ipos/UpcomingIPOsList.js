@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import React from 'react';
 import styled from 'styled-components';
 import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table';
+import PrefixPage from '../../pages/Prefix';
 
 
 const Styles = styled.div`
@@ -82,7 +83,7 @@ const Styles = styled.div`
   }
 `
 
-function Table({ columns, data}) {
+function Table({ columns, data, prefix}) {
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -163,7 +164,7 @@ function Table({ columns, data}) {
                 // <Link key={symbol+"-link"} to={"/ipos/"+symbol} ></Link>
                   {if (cell.column.Header === 'Symbol') {
                     //   console.log(cell.value)
-                      return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={"/upcomingipos/"+cell.value+"/overview"} >{cell.render('Cell')}</Link></td>
+                      return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={prefix+"/upcomingipos/"+cell.value+"/overview"} >{cell.render('Cell')}</Link></td>
                   } else {
                       return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                   }}
@@ -260,7 +261,7 @@ function UpcomingIPOsList(props) {
                 {props.title}
             </h2>
             <Styles>
-                <Table columns={columns} data={items} key={"upcomingiposlist-table"} />
+                <Table columns={columns} data={items} key={"upcomingiposlist-table"} prefix={props.prefix}/>
             </Styles>
         </div>
     );

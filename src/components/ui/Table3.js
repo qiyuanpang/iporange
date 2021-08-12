@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import {Fragment} from 'react';
+import PrefixPage from '../../pages/Prefix';
 
 function TableHeader(props) {
     return (
@@ -24,7 +25,7 @@ function TableData(props) {
             <tr key={"upcomingipos-"+symbol} >
                 <td>{company}</td>
                 <td>
-                    <Link key={symbol+"-link"} to={"/ipos/"+symbol} >{symbol}</Link>
+                    <Link key={PrefixPage+symbol+"-link"} to={"/ipos/"+symbol} >{symbol}</Link>
                 </td>
                 <td>{shares}</td>
                 <td>{pricelow}</td>

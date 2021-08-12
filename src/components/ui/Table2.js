@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import {Fragment} from 'react';
 import { Badge } from 'react-bootstrap';
+import PrefixPage from '../../pages/Prefix';
 
 function ShowNum(num) {
     if (num > 0) {
@@ -61,7 +62,7 @@ function TableData(props) {
             return (
                 <tr key={props.SorU+url+Math.floor(Math.random() * 79383).toString()} >
                     <td>
-                        <Link key={url+"-link"} to={"/"+props.SorU+"/"+url} >{name}</Link>
+                        <Link key={PrefixPage+url+"-link"} to={"/"+props.SorU+"/"+url} >{name}</Link>
                         {/* <Link onClick={whichsymbol} key={symbol+"link"} >{symbol}</Link> */}
                         {/* <a className="btn btn-primary btn-lg" aria-disabled="true" key={symbol+"link"} onClick={whichsymbol}>{symbol}</a> */}
                     </td>
@@ -83,19 +84,19 @@ function TableData(props) {
             return (
                 <tr key={props.SorU+url+Math.floor(Math.random() * 79383).toString()} >
                     <td>
-                        <Link key={url+"-link"} to={"/"+props.SorU+"/"+url} >{name}</Link>
+                        <Link key={PrefixPage+url+"-link"} to={"/"+props.SorU+"/"+url} >{name}</Link>
                         {/* <Link onClick={whichsymbol} key={symbol+"link"} >{symbol}</Link> */}
                         {/* <a className="btn btn-primary btn-lg" aria-disabled="true" key={symbol+"link"} onClick={whichsymbol}>{symbol}</a> */}
                     </td>
                     {Number.isFinite(num_3) ? <td>{num_3}</td> : <td>{"N/A"}</td>}
-                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href="/login" style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
-                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href="/login" style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
+                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href={PrefixPage+"/login"} style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
+                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href={PrefixPage+"/login"} style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
                     {Number.isFinite(num_6) ? <td>{num_6}</td> : <td>{"N/A"}</td>}
-                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href="/login" style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
-                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href="/login" style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
+                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href={PrefixPage+"/login"} style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
+                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href={PrefixPage+"/login"} style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
                     {Number.isFinite(num_12) ? <td>{num_12}</td> : <td>{"N/A"}</td>}
-                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href="/login" style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
-                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href="/login" style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
+                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href={PrefixPage+"/login"} style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
+                    <td><Badge bg='light' text='dark' pill><span style={{color: '#566573'}}><a href={PrefixPage+"/login"} style={{color: '#566573'}}>{"hiden"}</a></span></Badge></td>
                 </tr>
             )
         })

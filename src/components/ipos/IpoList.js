@@ -8,6 +8,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table';
 import { Badge } from 'react-bootstrap';
+import PrefixPage from '../../pages/Prefix';
 
 
 function ShowNum(num) {
@@ -193,7 +194,7 @@ function Table({ columns, data, StartDate, EndDate, prefix}) {
                 {row.cells.map(cell => {
                     {if (cell.column.Header === 'Symbol') {
                     //   console.log(cell.value)
-                        return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={"/ipos/"+cell.value+'/overview'} >{cell.render('Cell')}</Link></td>
+                        return <td {...cell.getCellProps()}><Link key={cell.value+"-link"} to={prefix+ "/ipos/"+cell.value+'/overview'} >{cell.render('Cell')}</Link></td>
                     } else if (cell.column.Header === 'Offer Return' || cell.column.Header === '1st Day MaxReturn' || cell.column.Header === '1st Week MaxReturn') {
                         return ShowNum(cell.value)
                     } else {

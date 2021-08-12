@@ -29,7 +29,7 @@ function AllUnderwritersPage(props) {
         <Styles>
             <div className="center" key="allunderwriters-div">
                 {/* <SUList title="All Underwriters" items={allunderwriters} key={"allunderwriters-sulist"} SorU={"underwriters"} Auth={Auth}/> */}
-                <UnderwritersList title="All Underwriters" items={allunderwriters} key={"allunderwriters-sulist"} Auth={Auth}/>
+                <UnderwritersList title="All Underwriters" items={allunderwriters} key={"allunderwriters-sulist"} Auth={Auth} prefix={''}/>
             </div>
         </Styles>
     )

@@ -1,13 +1,14 @@
 // import classes from "./Overview.module.css";
 import { useState, useEffect, Fragment } from 'react';
 import { Badge, Button } from 'react-bootstrap';
+import PrefixPage from '../../pages/Prefix';
 
 function ShowUnderwriters(text, num, auth, url) {
     if (auth) {
         if (num >= 0) {
             return (
                 <Fragment>
-                    <td ><a href={url} style={{color: '#17202A '}}>{text}</a></td>
+                    <td ><a href={PrefixPage+url} style={{color: '#17202A '}}>{text}</a></td>
                     <td >
                         <Badge bg='light' text='dark' pill>
                             <span  style={{color: '#21CA07'}}>{`${(num*100).toFixed(2)} %`}</span>
@@ -18,7 +19,7 @@ function ShowUnderwriters(text, num, auth, url) {
         } else {
             return (
                 <Fragment>
-                    <td ><a href={url} style={{color: '#17202A '}}>{text}</a></td>
+                    <td ><a href={PrefixPage+url} style={{color: '#17202A '}}>{text}</a></td>
                     <td >
                         <Badge bg='light' text='dark' pill>
                             <span  style={{color: '#EB2D16'}}>{`${(num*100).toFixed(2)} %`}</span>
@@ -30,10 +31,10 @@ function ShowUnderwriters(text, num, auth, url) {
     } else {
         return (
             <Fragment>
-                <td ><a href={url} style={{color: '#17202A '}}>{text}</a></td>
+                <td ><a href={PrefixPage+url} style={{color: '#17202A '}}>{text}</a></td>
                 <td >
                     <Badge bg='light' text='dark' pill>
-                        <span  style={{color: '#566573'}}><a href='/login' style={{color: '#566573'}}>{'hiden'}</a></span>
+                        <span  style={{color: '#566573'}}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{'hiden'}</a></span>
                     </Badge>
                 </td>
             </Fragment>
@@ -58,7 +59,7 @@ function ShowAuth(text, num, auth, url) {
             return (
                 <td>
                     <Badge bg='light' text='dark' pill>
-                        <a href={url}>{`${text}    `}</a>
+                        <a href={PrefixPage+url}>{`${text}    `}</a>
                         <span style={{color: '#21CA07'}}>{`${(num*100).toFixed(2)} %`}</span>
                     </Badge>
                 </td>
@@ -67,7 +68,7 @@ function ShowAuth(text, num, auth, url) {
             return (
                 <td>
                     <Badge bg='light' text='dark' pill>
-                        <a href={url}>{`${text}    `}</a>
+                        <a href={PrefixPage+url}>{`${text}    `}</a>
                         <span style={{color: '#EB2D16'}}>{`${(num*100).toFixed(2)} %`}</span>
                     </Badge>
                 </td>
@@ -76,7 +77,7 @@ function ShowAuth(text, num, auth, url) {
             return (
                 <td>
                     <Badge bg='light' text='dark' pill>
-                        <a href={url}>{`${text}    `}</a>
+                        <a href={PrefixPage+url}>{`${text}    `}</a>
                         <span style={{color: '#566573'}}>{`${(num*100).toFixed(2)} %`}</span>
                     </Badge>
                 </td>
@@ -86,8 +87,8 @@ function ShowAuth(text, num, auth, url) {
         return (
             <td>
                 <Badge bg='light' text='dark' pill>
-                    <a href={url}>{text+"    "}</a>
-                    <span style={{color: '#566573'}}><a href='/login' style={{color: '#566573'}}>{'hiden'}</a></span>
+                    <a href={PrefixPage+url}>{text+"    "}</a>
+                    <span style={{color: '#566573'}}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{'hiden'}</a></span>
                 </Badge>
             </td>
         )

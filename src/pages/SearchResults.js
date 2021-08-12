@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PrefixPage from './Prefix';
 
 const Styles = styled.div`
 .center {
@@ -13,7 +14,7 @@ function ListItem(props) {
         const {text, url, section} = item;
         return (
             <li className="list-group-item" key={"list-group-item"+Math.floor(Math.random() * 65974862).toString()}>
-                <span style={{color: '#5D6D7E'}}>{section}<a href={url}>{`:   ${text}`}</a></span>
+                <span style={{color: '#5D6D7E'}}>{section}<a href={PrefixPage+url}>{`:   ${text}`}</a></span>
             </li>
         )
     })

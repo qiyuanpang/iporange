@@ -34,9 +34,9 @@ function UnderwriterPage(props) {
     return (
         <Styles>
             <div className="center" key={underwriter.url+'-div-container'}>
-                <UnderwritersList title={underwriter.name} items={[underwriter]} key={underwriter.url+"-sulist"} Auth={Auth}/>
+                <UnderwritersList title={underwriter.name} items={[underwriter]} key={underwriter.url+"-sulist"} Auth={Auth} prefix={''}/>
                 <div className="row" key={underwriter.name+"_row_3"}>
-                    <IpoList key={underwriter.name+"-ipos"} ipos={ipos} title={'IPOs underwritten by '+underwriter.name} type='gain' prefix={'underwriter-'+underwriter.name}/>
+                    <IpoList key={underwriter.name+"-ipos"} ipos={ipos} title={'IPOs underwritten by '+underwriter.name} type='gain' prefix={''}/>
                 </div>
             </div>
         </Styles>
