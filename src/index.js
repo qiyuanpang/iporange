@@ -5,19 +5,19 @@ import { HashRouter as Router, useHistory} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.css';
+import {CookiesProvider} from 'react-cookie';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FooterPage from './pages/Footer';
-// import 'bootstrap/js/dist/dropdown';
-// import $ from 'jquery';
-// import Popper from 'popper.js';
+
 
 
 ReactDOM.render(
-  [<Router key="browserrouter">
-    <App key="app"/>
-  </Router>,
+  [
+  <CookiesProvider>
+    <Router key="browserrouter">
+        <App key="app"/>
+    </Router>
+  </CookiesProvider>,
     // <FooterPage key='footer'/>
   ],
   document.getElementById('root')

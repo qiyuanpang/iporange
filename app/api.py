@@ -264,17 +264,17 @@ def SignUp(email, username, password):
     if len(emailexist) > 0 or len(usernameexist) > 0:
         existornot = [{'EXIST': 1}]      
     else:
-        existornot = [{'EXIST': 0}]
         salt = bcrypt.gensalt(10)
         pwdhashed = bcrypt.hashpw(password.encode('utf-8'), salt)
         usnhashed = bcrypt.hashpw(username.encode('utf-8'), salt)
         print('==============================================')
         print('signup', type(pwdhashed), pwdhashed)
-        usncode = usnhashed.decode('utf-8').replace('/api/','A').replace('$','B').replace('.','C').replace('&','D')
+        usncode = usnhashed.decode('utf-8').replace('/','A').replace('$','B').replace('.','C').replace('&','D')
         pwdhashed = pwdhashed.decode('utf-8')
         session.add_all([Userdata(Email=email, Username=username, Password=pwdhashed, Usernamecode=usncode)])
         session.commit() 
         welcome(email, username) 
+        existornot = [{'EXIST': 0, 'Username': usncode}]
     return jsonify(existornot)
 
 @app.route('/api/login/<email>/<password>', methods=['GET'])
@@ -285,7 +285,8 @@ def Login(email, password):
     if len(user) == 0:
         existornot = [{'EXIST': 0}]
     elif bcrypt.checkpw(password.encode('utf8'), user[0].Password.encode('utf8')):
-        existornot = [{'EXIST': 1, 'Username': user[0].Username}]
+        existornot = [{'EXIST': 1, 'Username': user[0].Usernamecode}]
+        # console.log(existornot)
     else:
         existornot = [{'EXIST': 0}]
     return jsonify(existornot)

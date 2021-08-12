@@ -38,7 +38,7 @@ function ShowNum(num, Auth) {
     return (
       <td>
         <Badge bg='light' text='dark' pill>
-          <span style={{color: '#566573'}}><a href="/login" style={{color: '#566573'}}>{"hiden"}</a></span>
+          <span style={{color: '#566573'}}><a href={PrefixPage+"/login"} style={{color: '#566573'}}>{"hiden"}</a></span>
         </Badge>
       </td>
     )

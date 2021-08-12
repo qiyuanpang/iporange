@@ -26,7 +26,7 @@ import AllSectorsPage from './pages/AllSectors';
 import AllUnderwritersPage from './pages/AllUnderwriters';
 import SearchResultsPage from './pages/SearchResults';
 import { Navbar, Nav, Form, Button, NavDropdown, FormControl, Container} from 'react-bootstrap';
-
+import {useCookies} from 'react-cookie';
 // import 'bootstrap/dist/css/bootstrap.css';
 import FooterPage from './pages/Footer';
 import ContactUSPage from './pages/ContactUs';
@@ -57,10 +57,12 @@ function App(props) {
   const [isLogin, setIsLogin] = useState(false);
   const [searchdata, setSearchData] = useState([]);
   const [searchinput, setSearchInput] = useState('');
+  const [cookies, setCookie, removeCookie] = useCookies(['loginuser']);
 
 
   useEffect(() => {
-    const loggedinuser = localStorage.getItem('loginuser');
+    // const loggedinuser = localStorage.getItem('loginuser');
+    const loggedinuser = cookies.loginuser
     // console.log(loggedinuser)
     if (loggedinuser) {
       // const founduser = JSON.parse(loggedinuser);
@@ -98,7 +100,8 @@ function App(props) {
         if (existornot[0].EXIST === 1) {
           setUserdata({Email: email, Username: username, Password: password, Message: 'The email or username entered exists, please try agian.'})
         } else {
-          localStorage.setItem('loginuser', username)
+          // localStorage.setItem('loginuser', username)
+          setCookie('loginuser', existornot[0].Username)
           setIsLogin(true);
           window.location.href = '/';
         }
@@ -117,7 +120,6 @@ function App(props) {
         if (existornot[0].EXIST === 0) {
           setUserdata({Email: email, Username: '', Message: 'The email you entered does not exist in our database, please try again or create a new account!'})
         } else {
-          // localStorage.setItem('loginuser', existornot[0].Username)
           // setIsLogin(true);
           setUserdata({Email: email, Username: '', Message: 'An email has been sent your email address, please use it to reset your password!'})
           // window.location.href = '/resetpassword';
@@ -138,7 +140,6 @@ function App(props) {
         if (existornot[0].EXIST === 0) {
           setUserdata({Username: ''})
         } else {
-          // localStorage.setItem('loginuser', existornot[0].Username)
           // setIsLogin(true);
           setUserdata({Username: '', Message: 'Your password has been changed successfully! Please sign up later!'})
           window.location.href = PrefixPage + '/login';
@@ -159,7 +160,8 @@ function App(props) {
         if (existornot[0].EXIST === 0) {
           setUserdata({Email: email, Username: '', Password: password, Message: 'Email or password incorrect, please try agian.'})
         } else {
-          localStorage.setItem('loginuser', existornot[0].Username)
+          // localStorage.setItem('loginuser', existornot[0].Username)
+          setCookie('loginuser', existornot[0].Username)
           setIsLogin(true);
           window.location.href = '/';
         }
@@ -186,9 +188,6 @@ function App(props) {
           texts.push(data.results[k].text)
         }
       }
-      // localStorage.setItem('searchresults-urls', urls);
-      // localStorage.setItem('searchresults-sections', sections);
-      // localStorage.setItem('searchresults-texts', texts);
       
       setSearchData(data.results);
       // setSearchInput(data.input);
@@ -198,7 +197,8 @@ function App(props) {
   };
 
   function Logout() {
-    localStorage.removeItem('loginuser');
+    // localStorage.removeItem('loginuser');
+    removeCookie('loginuser')
     setLoginedUser('')
   }
 

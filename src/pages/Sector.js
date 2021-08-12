@@ -5,6 +5,7 @@ import SUList from "../components/ipos/SUList";
 import SectorsList from '../components/ipos/SectorsList';
 import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
+import PrefixPage from './Prefix';
 
 
 const Styles = styled.div`
