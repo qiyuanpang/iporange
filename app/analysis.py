@@ -3,9 +3,9 @@ from datetime import timedelta
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 #from app import utils, tables, setting
-from app.utils import *
-from app.tables import *
-from app.setting import SQLAlCHEMY_DATABASE_URI
+from utils import *
+from tables import *
+from setting import SQLAlCHEMY_DATABASE_URI
 
 def basicanalysis():
     engine = create_engine(SQLAlCHEMY_DATABASE_URI, echo=True)

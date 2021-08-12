@@ -46,23 +46,6 @@ function HomePage(props) {
     const [type, setType] = useState('Gainers');
     const [num, setNum] = useState(10);
 
-    const [upcomingipos, setUpcomingIPOs] = useState([{}]);
-
-    useEffect(() => {
-        // setIsUpcomingIPOs(true);
-        fetch("/api/upcomingipos").then(response => {
-            // console.log(typeof(response), response)
-            return response.json();
-        }).then(data => {
-            let ipos = []
-            for (let k = 0; k < Math.min(5,data.length); k++) {
-                ipos.push(data[k])
-            }
-            setUpcomingIPOs(ipos);
-        });
-        // setIsUpcomingIPOs(false);
-    }, []);
-
     useEffect(() => {
         // setIsLoading(true);
         // console.log(period, type)

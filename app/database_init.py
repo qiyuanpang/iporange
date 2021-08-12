@@ -8,15 +8,15 @@ from bs4 import BeautifulSoup, SoupStrainer
 import pandas as pd
 import os
 #from app import utils, tables, analysis
-from app.utils import *
-from app.tables import *
-from app.analysis import *
+from utils import *
+from tables import *
+from analysis import *
 import re
 import psycopg2
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.setting import SQLAlCHEMY_DATABASE_URI
+from setting import SQLAlCHEMY_DATABASE_URI
 
 def basicinfo(url):
     page = requests.get(url)
