@@ -1,0 +1,12 @@
+.card_text {
+    word-wrap: break-word;
+}
+
+.card_height {
+    height: 350px;
+    position: relative;
+}
+
+.card_scroll {
+    overflow-y: auto;
+}
