@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import PrefixPage from '../../pages/Prefix';
 
 const Styles = styled.div`
+background-color: #EAFAF1;
+
 .center {
+    background-color: #EAFAF1;
     margin: auto;
     width: auto;
     padding: 10px;
@@ -72,7 +75,7 @@ function MainNavigation(props) {
     return (
         <Styles>
             <div className="center" key='navigation-div-0'>
-                <Navbar className="justify-content-center" bg="light" expand="lg" >
+                <Navbar className="justify-content-center" bg="light" expand="lg" fixed="top">
                     <Container>
                         <Navbar.Brand href="/" >IPO Range</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -85,7 +88,7 @@ function MainNavigation(props) {
                                 <Nav.Link href="/">Home</Nav.Link>
                                 <Nav.Link href={PrefixPage+"/upcomingipos"}>Upcoming IPOs</Nav.Link>
                                 <NavDropdown title="Categories" id="navbarScrollingDropdown">
-                                    <NavDropdown.Item href={PrefixPage+"/ipos"}>Past IPOs</NavDropdown.Item>
+                                    <NavDropdown.Item href={PrefixPage+"/ipos"}>Priced IPOs</NavDropdown.Item>
                                     <NavDropdown.Item href={PrefixPage+"/sectors"}>Sectors</NavDropdown.Item>
                                     {/* <NavDropdown.Divider /> */}
                                     <NavDropdown.Item href={PrefixPage+"/underwriters"}>Underwriters</NavDropdown.Item>

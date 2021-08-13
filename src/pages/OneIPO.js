@@ -357,7 +357,7 @@ function OneIPOPage(props){
         <div className="center container" key={Symbol+"_1"}>
             <div className="row" key={Symbol+"_row_1"}>
                 <div className="col align-self-start">
-                    <h3 style={{color: "black"}}>{loadedIPO.company}</h3>
+                    <h3 style={{color: "black"}}><a href={PrefixPage+'/ipos'}>{"Priced IPOs"}</a>{' > '+loadedIPO.company}</h3>
                 </div>
             </div>
             <div className="row" key={Symbol+"_row_2"}>
@@ -394,7 +394,7 @@ function OneIPOPage(props){
                 <div className="col-sm d-flex" key={Symbol+"_row_2_records"}>
                     <div className="card card-body flex-fill">
                         <div key={Symbol+"_in_row_1"}>
-                            <p>{"Trade started at:   "}{ShowAuth(loadedIPO.StartPrice, (loadedIPO.StartPrice-loadedIPO.OfferPrice)/loadedIPO.OfferPrice, true, "*")}</p>
+                            <p>{"Trade started at:   "}{ShowAuth(loadedIPO.StartPrice, (loadedIPO.StartPrice-loadedIPO.OfferPrice)/loadedIPO.OfferPrice, true, "/ipos/"+Symbol+"/historicalquotes")}</p>
                         </div>
                         <div key={Symbol+"_in_row_2"}>
                             {/* {RecordTable(loadedIPO, Symbol)} */}

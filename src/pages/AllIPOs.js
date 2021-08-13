@@ -42,7 +42,7 @@ function AllIPOsPage(props) {
         <Styles>
             <div className="center" key="allipos-div-1">
                 {/* <h1>All IPOs Page</h1> */}
-                <IpoList ipos={loadedAllIPOs} title='All IPOs' key="alliposlist" type="gain" prefix={""}/>
+                <IpoList ipos={loadedAllIPOs} title='Priced IPOs' key="alliposlist" type="gain" prefix={""}/>
             </div>
         </Styles>
 

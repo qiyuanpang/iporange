@@ -273,7 +273,7 @@ def SignUp(email, username, password):
         pwdhashed = pwdhashed.decode('utf-8')
         session.add_all([Userdata(Email=email, Username=username, Password=pwdhashed, Usernamecode=usncode)])
         session.commit() 
-        #welcome(email, username) 
+        welcome(email, username) 
         existornot = [{'EXIST': 0, 'Username': usncode}]
     return jsonify(existornot)
 

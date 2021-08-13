@@ -406,9 +406,9 @@ function SectorsList(props) {
     if (items.length > 1) {
       return (
           <div>
-              <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
+              <h3 className='title' text-align='center' fontFamily='arial, sans-serif'>
                   {props.title}
-              </h2>
+              </h3>
               <Styles>
                   <Table columns={columns} data={items} key={"sulist-sectors-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
               </Styles>
@@ -417,9 +417,9 @@ function SectorsList(props) {
     } else {
       return (
         <div>
-            <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
+            <h3 className='title' text-align='center' fontFamily='arial, sans-serif'>
                 <a href={PrefixPage+'/sectors'}>{"Sectors"}</a>{' > '+props.title}
-            </h2>
+            </h3>
             <Styles>
                 <Table1 columns={columns} data={items} key={"sulist-sectors-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
             </Styles>

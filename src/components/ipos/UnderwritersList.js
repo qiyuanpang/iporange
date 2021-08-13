@@ -405,9 +405,9 @@ function UnderwritersList(props) {
     if (items.length > 1) {
         return (
             <div>
-                <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
+                <h3 className='title' text-align='center' fontFamily='arial, sans-serif'>
                     {props.title}
-                </h2>
+                </h3>
                 <Styles>
                     <Table columns={columns} data={items} key={"sulist-underwriters-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
                 </Styles>
@@ -416,9 +416,9 @@ function UnderwritersList(props) {
     } else {
         return (
             <div>
-                <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
+                <h3 className='title' text-align='center' fontFamily='arial, sans-serif'>
                     <a href={PrefixPage+'/underwriters'}>{"Underwriters"}</a>{' > '+props.title}
-                </h2>
+                </h3>
                 <Styles>
                     <Table1 columns={columns} data={items} key={"sulist-underwriters-"+Math.floor(Math.random() * 13254)} Auth={props.Auth} prefix={props.prefix}/>
                 </Styles>

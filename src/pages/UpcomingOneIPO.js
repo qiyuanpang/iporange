@@ -184,7 +184,7 @@ function UpcomingOneIPOPage(props){
             <div className="center" key={Symbol+"_1"}>
                 <div className="row" key={Symbol+"_row_1"}>
                     <div className="col align-self-start">
-                        <h3 style={{color: "black"}}>{loadedIPO.company}</h3>
+                        <h3 style={{color: "black"}}><a href={PrefixPage+'/upcomingipos'}>{"Upcoming IPOs"}</a>{' > '+loadedIPO.company}</h3>
                     </div>
                 </div>
                 <div className="row" key={Symbol+"_row_2"}>

@@ -5,10 +5,12 @@ import PrefixPage from "./Prefix";
 
 
 const Styles = styled.div`
+background-color: #EAFAF1;
 .footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
+    right: 0;
     margin-top: 1rem;
     padding: 1rem;
     background-color: light;
@@ -31,7 +33,7 @@ const FooterPage = () => (
     <div className="footer">
         <Navbar className="justify-content-center" bg="light" expand="sm" >
             <Container>
-                <Navbar.Brand href="/" className='text'>Copyright 2021 - 2021 @ IPOSecretary.com</Navbar.Brand>
+                <Navbar.Brand href="/" className='text'>Copyright 2021 - 2021 @ IPORange.com</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

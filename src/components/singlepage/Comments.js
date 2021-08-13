@@ -1,7 +1,20 @@
+import {Form, Container, Button, FormControl} from 'react-bootstrap';
+
 function Comments(props) {
-    return <div className="card">
-        <h3>This section is still under construction.</h3>
-    </div>
+    return (
+       <Container>
+	    <Form className="d-flex">
+	        <Form.Control
+	            type="text"
+	            placeholder="This session will be coming soon!"
+	            rows={4}
+	            as="textarea"
+	            size="lg"
+	        />
+	    </Form>
+	    <Button variant="secondary" type="submit" size="sm" style={{float: 'right'}}  disabled>Comment</Button>
+       </Container>
+    )
 }
 
 export default Comments;

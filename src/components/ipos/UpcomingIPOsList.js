@@ -257,9 +257,9 @@ function UpcomingIPOsList(props) {
     // console.log(props.item)
     return (
         <div>
-            <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
+            <h3 className='title' text-align='center' fontFamily='arial, sans-serif'>
                 {props.title}
-            </h2>
+            </h3>
             <Styles>
                 <Table columns={columns} data={items} key={"upcomingiposlist-table"} prefix={props.prefix}/>
             </Styles>

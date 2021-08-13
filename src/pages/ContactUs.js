@@ -13,8 +13,8 @@ function ContactUSPage() {
         <Styles>
             <div className='center container'>
                 <h4>Please contact us if you have any question or suggestion: </h4>
-                <h5>Qiyuan Pang - founder and owner</h5>
-                <h5>Email: iposecretary@gmail.com</h5>
+                <h5><a href="https://www.linkedin.com/in/pangqy/">Qiyuan Pang</a> - Founder and Owner </h5>
+                <h5>Email: iporangeweb@gmail.com</h5>
             </div>
         </Styles>
     )

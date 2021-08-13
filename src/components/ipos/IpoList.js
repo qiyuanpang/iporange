@@ -315,9 +315,9 @@ function IpoList(props) {
     // console.log(props.ipos)
     return (
         <div key={props.prefix+'div-b4h1'}>
-            <h2 className='title' text-align='center' fontFamily='arial, sans-serif' key={props.prefix+'-h1'}>
+            <h3 className='title' text-align='center' fontFamily='arial, sans-serif' key={props.prefix+'-h1'}>
                 {props.title}
-            </h2>
+            </h3>
             <Styles key={props.prefix+'-styles-css'}>
                 <span>{"From "}</span>
                 <input

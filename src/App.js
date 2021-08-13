@@ -59,6 +59,9 @@ function App(props) {
   const [searchinput, setSearchInput] = useState('');
   const [cookies, setCookie, removeCookie] = useCookies(['loginuser']);
 
+  useEffect(() => {
+    document.title = "IPO Range"
+  }, []);
 
   useEffect(() => {
     // const loggedinuser = localStorage.getItem('loginuser');
@@ -204,7 +207,7 @@ function App(props) {
 
 
   return (
-      <div className='App'>
+      <div className='main-container' >
         <Layout LoginedUser={loginedUser} key="layout" onLogout={Logout} onSearch={Search} className="justify-content-center"/>
         <Switch key="switch">
           <Route path='/' key="route-home" exact>

@@ -106,7 +106,7 @@ function HomePage(props) {
     return (
         <Styles>
             <div className="center" key="home-div-1">
-                <h2 className='title' text-align='center' fontFamily='arial, sans-serif'>
+                <h3 className='title' text-align='center' fontFamily='arial, sans-serif'>
                     {'Top '}
                     <select
                         value={num}
@@ -146,7 +146,7 @@ function HomePage(props) {
                         </option>
                         ))}
                     </select>
-                </h2>
+                </h3>
                 {WhichType(type, loadedTopIPOs)}
             </div>
         </Styles>
