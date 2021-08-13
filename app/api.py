@@ -57,8 +57,8 @@ def newsdata(symbol):
         news = {}
         which = content.contents[i]
         # print(which)
-        news['headline'] = which.div.h3.text.replace('/api/n','').strip()
-        news['href'] = "#"
+        news['headline'] = which.div.h3.text.replace('/n','').strip()
+        news['href'] = ""
         if (which.div.h3.a):
             news['href'] = which.div.h3.a['href']
         news['timeline'] = which.div.div.span.text
