@@ -14,8 +14,9 @@ background-color: #EAFAF1;
 }
 
 .right1 {
-    position: relative;
-    left: 350px;
+    position: absolute;
+    right: 300px;
+    top: 3px;
 }
 
 .right2 {
@@ -37,7 +38,7 @@ function MainNavigation(props) {
         if (loginuser.length > 0) {
             return (
                 // <a className="btn btn-primary btn-lg" href="/" role="button" aria-disabled="true" key="a-logout" onClick={props.onLogout}>Log Out</a>
-                <div className="right2" key="logoutbutton">
+                <div className="right1" key="logoutbutton">
                     <Button variant="outline-success" onClick={props.onLogout}>
                         <Nav.Link href='/'>Log Out</Nav.Link>
                     </Button>

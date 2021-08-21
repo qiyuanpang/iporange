@@ -18,12 +18,20 @@ background-color: #EAFAF1;
     
 }
 
-.right {
-    position: relative;
-    left: 700px;
+.right1 {
+    position: absolute;
+    right: 400px;
+    bottom: 8px;
+}
+
+.right2 {
+    position: absolute;
+    right: 250px;
+    bottom: 8px;
 }
 
 .text {
+    
     color: #BDC3C7;
 }
 `
@@ -41,8 +49,8 @@ const FooterPage = () => (
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                     >
-                        <Nav.Link href={PrefixPage+"/otherlinks"} className='text'>OTHER LINKS</Nav.Link>
-                        <Nav.Link href={PrefixPage+"/contactus"} className='text'>CONTACT US</Nav.Link>
+                        <Nav.Link href={PrefixPage+"/otherlinks"} className='right2'>OTHER LINKS</Nav.Link>
+                        <Nav.Link href={PrefixPage+"/contactus"} className='right1'>CONTACT US</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
