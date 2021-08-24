@@ -8,7 +8,7 @@ import PrefixPage from './Prefix';
 const Styles = styled.div`
 .center {
     margin: auto;
-    width: 30%;
+    width: 40%;
     padding: 10px;
 }
 

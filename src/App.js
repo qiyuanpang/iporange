@@ -207,6 +207,7 @@ function App(props) {
 
 
   return (
+    <>
       <div className='main-container' >
         <Layout LoginedUser={loginedUser} key="layout" onLogout={Logout} onSearch={Search} className="justify-content-center"/>
         <Switch key="switch">
@@ -265,8 +266,11 @@ function App(props) {
             <ResetPSWPage onResetPSW={ResetPSW} Userdata={userdata}/>
           </Route>
         </Switch>
+      </div>
+      <div className='footer'>
         <FooterPage />
       </div>
+    </>
   )
 }
 

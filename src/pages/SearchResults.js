@@ -10,7 +10,7 @@ const Styles = styled.div`
 
   .center {
     margin: auto;
-    width: 40%;
+    width: 50%;
     padding: 10px;
   }
 

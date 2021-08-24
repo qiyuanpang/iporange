@@ -13,7 +13,7 @@ import PrefixPage from './Prefix';
 const Styles = styled.div`
 .center {
     margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
 }
 `

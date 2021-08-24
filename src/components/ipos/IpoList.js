@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import React from 'react';
 import styled from 'styled-components';
-import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table';
+import { useTable, usePagination, useSortBy, useFilters, useGlobalFilter, useAsyncDebounce, useBlockLayout, useResizeColumns } from 'react-table';
 import { Badge } from 'react-bootstrap';
 import PrefixPage from '../../pages/Prefix';
 
@@ -81,6 +81,7 @@ const Styles = styled.div`
       :last-child {
         border-right: 0;
       }
+
     }
   }
 
@@ -181,6 +182,12 @@ function Table({ columns, data, StartDate, EndDate, prefix}) {
                       : <div className="arrow-down"></div>
                     : ' '}
                 </span>
+                {/* <div
+                  {...column.getResizerProps()}
+                  className={`resizer ${
+                    column.isResizing ? 'isResizing' : ''
+                  }`}
+                /> */}
                 </th>
               ))}
             </tr>

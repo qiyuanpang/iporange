@@ -41,6 +41,9 @@ const Styles = styled.div`
   table {
     border-spacing: 0;
     border: 1px solid black;
+    overflow-x: auto;
+    min-width: 400px;
+    height: 400px;
     width: 100%;
 
     tr {
@@ -113,6 +116,16 @@ const Styles = styled.div`
 
 function Table({ columns, data, prefix}) {
   // Use the state and functions returned from useTable to build your UI
+  // const defaultColumn = React.useMemo(
+  //   () => ({
+  //     minWidth: 50,
+  //     width: 50,
+  //     height: 50,
+  //     maxWidth: 800,
+  //   }),
+  //   []
+  // )
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -137,6 +150,7 @@ function Table({ columns, data, prefix}) {
       columns,
       data,
       initialState: { pageIndex: 0 },
+      // defaultColumn,
     },
     useFilters, useSortBy, usePagination
   )

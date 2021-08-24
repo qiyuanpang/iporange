@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Styles = styled.div`
 .center {
     margin: auto;
-    width: 30%;
+    width: 50%;
     padding: 10px;
 }
 
