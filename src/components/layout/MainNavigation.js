@@ -7,27 +7,24 @@ const Styles = styled.div`
 background-color: #EAFAF1;
 
 .center {
+    display: flex;
     background-color: #EAFAF1;
     margin: auto;
     width: auto;
     padding: 10px;
 }
 
-.right1 {
-    position: absolute;
-    right: 300px;
-    top: 3px;
+#button {
+    align-self: flex-end;
 }
 
-.right2 {
-    position: relative;
-    left: 430px;
+.category {
+    align-self: flex-start;
 }
+
 
 .search {
-    postition: relative;
-    left: 100px;
-
+    align-self: center;
 }
 `
 
@@ -38,7 +35,7 @@ function MainNavigation(props) {
         if (loginuser.length > 0) {
             return (
                 // <a className="btn btn-primary btn-lg" href="/" role="button" aria-disabled="true" key="a-logout" onClick={props.onLogout}>Log Out</a>
-                <div className="right1" key="logoutbutton">
+                <div  key="logoutbutton" >
                     <Button variant="outline-success" onClick={props.onLogout}>
                         <Nav.Link href='/'>Log Out</Nav.Link>
                     </Button>
@@ -54,7 +51,7 @@ function MainNavigation(props) {
                 //         <a className="btn btn-primary btn-lg" href="/signup" role="button" aria-disabled="true" key="a-signup">Sign Up</a>
                 //     </li>
                 // </ul>
-                <div className="right1" key="loginsignup">
+                <div key="loginsignup" >
                     <Button variant="outline-success">
                         <Nav.Link href={PrefixPage+'/login'}>Login</Nav.Link>
                     </Button>
@@ -77,10 +74,10 @@ function MainNavigation(props) {
         <Styles>
             <div className="center" key='navigation-div-0'>
                 <Navbar className="justify-content-center" bg="light" expand="lg" fixed="top">
-                    <Container>
+                    <Container >
                         <Navbar.Brand href="/" >IPO Range</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
-                        <Navbar.Collapse id="navbarScroll">
+                        <Navbar.Collapse id="navbarScroll" >
                             <Nav
                             className="mr-auto my-2 my-lg-0"
                             style={{ maxHeight: '100px' }}
@@ -98,29 +95,34 @@ function MainNavigation(props) {
                                     Link
                                 </Nav.Link> */}
                             </Nav>
+                            
                             <div className="search">
                                 <Form className="d-flex" onSubmit={Search}>
                                     <FormControl
                                         type="search"
                                         placeholder="Search"
-                                        className="mr-2"
+                                        className="mr-4"
                                         aria-label="Search"
                                         ref={searchinput}
                                     />
                                     <Button variant="outline-success" type='submit'>Search</Button>
                                 </Form>
                             </div>
-                            <Nav
-                            className="mr-auto my-2 my-lg-0"
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                            >
-                                {InOrOut(props.LoginedUser)}
-                            </Nav>
                         </Navbar.Collapse>
+                        
+                        <Nav
+                        className="mr-auto my-2 my-lg-0"
+                        style={{ maxHeight: '100px' }}
+                        id = 'button'
+                        navbarScroll
+                        >
+                            {InOrOut(props.LoginedUser)}
+                        </Nav>
                     </Container>
+                    
                 </Navbar>
             </div>
+            
         </Styles>
         
     )

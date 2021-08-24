@@ -6,6 +6,8 @@ import PrefixPage from "./Prefix";
 
 const Styles = styled.div`
 background-color: #EAFAF1;
+display: flex;
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -16,6 +18,10 @@ background-color: #EAFAF1;
     background-color: light;
     width: 100%;
     
+}
+
+.button {
+    justify-content: flex-end;
 }
 
 .right1 {
@@ -43,14 +49,14 @@ const FooterPage = () => (
             <Container>
                 <Navbar.Brand href="/" className='text'>Copyright 2021 - 2021 @ IPORange.com</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
+                <Navbar.Collapse id="navbarScroll" className='button'>
                     <Nav
                     className="mr-auto my-2 my-lg-0 right"
                     style={{ maxHeight: '100px' }}
                     navbarScroll
                     >
-                        <Nav.Link href={PrefixPage+"/otherlinks"} className='right2'>OTHER LINKS</Nav.Link>
-                        <Nav.Link href={PrefixPage+"/contactus"} className='right1'>CONTACT US</Nav.Link>
+                        <Nav.Link href={PrefixPage+"/otherlinks"} >OTHER LINKS</Nav.Link>
+                        <Nav.Link href={PrefixPage+"/contactus"} >CONTACT US</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
