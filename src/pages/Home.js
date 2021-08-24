@@ -13,7 +13,7 @@ const Styles = styled.div`
 .center {
     position: relative;
     margin: auto;
-    width: 60%;
+    width: 70%;
     padding: 10px;
 }
 `
