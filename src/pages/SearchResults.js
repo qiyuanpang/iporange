@@ -109,7 +109,7 @@ function Table({ columns, data, cate, prefix}) {
             setPageSize(Number(e.target.value))
           }}
         >
-          {[10, 20, 30, 40, 50, 100000].map(pageSize => (
+          {[10, 20, 30, 50, 100000].map(pageSize => (
             <option key={pageSize} value={pageSize}>
               Show {pageSize === 100000 ? 'All' : pageSize}
             </option>
@@ -200,7 +200,10 @@ function Table({ columns, data, cate, prefix}) {
 const customFilterFunction = (rows, id, Cate) =>
   rows.filter((row) => {
     // console.log(StartDate, EndDate)
-    if (row.original.section === Cate) {
+    if (Cate === 'All') {
+        return row
+    }
+    else if (row.original.section === Cate) {
         //   console.log(row.original.offerdate, Dates)
         return row
     }
@@ -219,7 +222,7 @@ function ListItem(props) {
 
 function SearchResultsPage(props) {
     const results = props.input;
-    const [cate, setCate] = useState('Stock')
+    const [cate, setCate] = useState('All')
     const columns = React.useMemo(
         () => [
         {
@@ -255,7 +258,7 @@ function SearchResultsPage(props) {
                         setCate(e.target.value)
                         }}
                     >
-                        {['Stock', 'Underwriter', 'Sector'].map(num => (
+                        {['All', 'Stock', 'Underwriter', 'Sector'].map(num => (
                         <option key={'search-cate-'+num} value={num}>
                             {num}
                         </option>

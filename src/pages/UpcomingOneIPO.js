@@ -5,6 +5,7 @@ import WhichSubPage from "../components/singlepage/WhichSubPage";
 import redorgreen from "../components/funcs/RedOrGreen";
 import { Badge, Button } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
+import { Navbar, Nav, Form, NavDropdown, FormControl, Container} from 'react-bootstrap';
 import styled from 'styled-components';
 import PrefixPage from './Prefix';
 
@@ -193,8 +194,27 @@ function UpcomingOneIPOPage(props){
                     </div>
                 </div>
                 
+                <Navbar className="justify-content-center" bg="light" expand="lg" >
+                    <Container>
+                        <Navbar.Toggle aria-controls="navbarScroll" />
+                        <Navbar.Collapse id="navbarScroll">
+                            <Nav
+                            className="d-flex justify-content-between mr-auto my-2 my-lg-0"
+                            style={{ maxHeight: '100px' }}
+                            navbarScroll
+                            >
+                                <Nav.Link href={PrefixPage+"/upcomingipos/"+Symbol+"/overview"}>Overview</Nav.Link>
+                                <Nav.Link href={PrefixPage+"/upcomingipos/"+Symbol+"/news"}>News</Nav.Link>
+                                <Nav.Link href={PrefixPage+"/upcomingipos/"+Symbol+"/comments"}>Comments</Nav.Link>
+                                <Nav.Link href={PrefixPage+"/upcomingipos/"+Symbol+"/historicalquotes"}>Historical Quotes</Nav.Link>
+                                <Nav.Link href={PrefixPage+"/upcomingipos/"+Symbol+"/profile"}>Profile</Nav.Link>
+                        
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
                 
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-12">
                         <ul className="nav nav-tabs" style={{width: "100%"}}>
                             <li className="nav-item" key={Symbol+"-page-1"}>
@@ -214,7 +234,7 @@ function UpcomingOneIPOPage(props){
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> */}
                 <div className="row" key={Symbol+"_row_3"}>
                     <div className="col-12" key={Symbol+"_3"}>
                         {<WhichSubPage subpage={Subpage} symbol={Symbol} key={Symbol+"__"+Subpage} Auth={Auth} priced={false}/>}

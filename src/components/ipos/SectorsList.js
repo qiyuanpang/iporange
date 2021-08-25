@@ -89,6 +89,14 @@ const Styles = styled.div`
         border-right: 0;
       }
     }
+
+    .center-header {
+      text-align:center;
+    }
+  }
+   
+  .center-header {
+    text-align:center;
   }
 
   .pagination {
@@ -365,6 +373,7 @@ function SectorsList(props) {
                 accessor: 'return_h_3'
               }
             ],
+            headerClassName: 'center-header'
           },
           {
             Header: 'Last 6 Months',
@@ -382,6 +391,7 @@ function SectorsList(props) {
                 accessor: 'return_h_6'
               }
             ],
+            headerClassName: 'center-header'
           },
           {
             Header: 'Last 12 Months',
@@ -399,6 +409,7 @@ function SectorsList(props) {
                 accessor: 'return_h_12'
               }
             ],
+            headerClassName: 'center-header'
           }
         ],
         []

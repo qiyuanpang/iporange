@@ -6,6 +6,20 @@ import PrefixPage from '../../pages/Prefix';
 const Styles = styled.div`
 background-color: #EAFAF1;
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+.navbar-brand>img {
+padding: 7px 7px;
+}
+
+.nav-logo {
+    float: left;
+    margin-top: -15px;
+  }
+
 .center {
     display: flex;
     background-color: #EAFAF1;
@@ -36,7 +50,7 @@ function MainNavigation(props) {
             return (
                 // <a className="btn btn-primary btn-lg" href="/" role="button" aria-disabled="true" key="a-logout" onClick={props.onLogout}>Log Out</a>
                 <div  key="logoutbutton" >
-                    <Button variant="outline-success" onClick={props.onLogout}>
+                    <Button variant="outline-danger" onClick={props.onLogout}>
                         <Nav.Link href='/'>Log Out</Nav.Link>
                     </Button>
                 </div>
@@ -75,6 +89,9 @@ function MainNavigation(props) {
             <div className="center" key='navigation-div-0'>
                 <Navbar className="justify-content-center" bg="light" expand="lg" fixed="top">
                     <Container >
+                        <a class="navbar-brand" href="/">
+                            <img src="./logo192.png" width="50" height="50"/>
+                        </a>
                         <Navbar.Brand href="/" >IPO Range</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll" >

@@ -410,28 +410,28 @@ function OneIPOPage(props){
             </div>
             
 
-            {/* <Navbar className="justify-content-center" bg="light" expand="lg" >
+            <Navbar className="justify-content-center" bg="light" expand="lg" >
                 <Container>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                        className="mr-auto my-2 my-lg-0"
+                        className="d-flex justify-content-between mr-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                         >
-                            <Nav.Link href={"/ipos/"+Symbol}>Overview</Nav.Link>
-                            <Nav.Link href={"/ipos/"+Symbol+"/news"}>News</Nav.Link>
-                            <Nav.Link href={"/ipos/"+Symbol+"/comments"}>Comments</Nav.Link>
-                            <Nav.Link href={"/ipos/"+Symbol+"/historicalquotes"}>Historical Quotes</Nav.Link>
-                            <Nav.Link href={"/ipos/"+Symbol+"/profile"}>Profile</Nav.Link>
+                            <Nav.Link href={PrefixPage+"/ipos/"+Symbol+"/overview"}>Overview</Nav.Link>
+                            <Nav.Link href={PrefixPage+"/ipos/"+Symbol+"/news"}>News</Nav.Link>
+                            <Nav.Link href={PrefixPage+"/ipos/"+Symbol+"/comments"}>Comments</Nav.Link>
+                            <Nav.Link href={PrefixPage+"/ipos/"+Symbol+"/historicalquotes"}>Historical Quotes</Nav.Link>
+                            <Nav.Link href={PrefixPage+"/ipos/"+Symbol+"/profile"}>Profile</Nav.Link>
                     
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar> */}
+            </Navbar>
 
             
-            <div className="row">
+            {/* <div className="row">
                 <div className="col-12">
                     <ul className="nav nav-tabs" style={{width: "100%"}}>
                         <li className="nav-item" key={Symbol+"-page-1"}>
@@ -451,7 +451,7 @@ function OneIPOPage(props){
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
             <div className="row" key={Symbol+"_row_3"}>
                 <div className="col-12" key={Symbol+"_3"}>
                     {<WhichSubPage subpage={Subpage} symbol={Symbol} key={Symbol+"__"+Subpage} Auth={Auth} priced={true}/>}
