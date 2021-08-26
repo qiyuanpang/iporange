@@ -149,7 +149,7 @@ function App(props) {
           setUserdata({Username: ''})
         } else {
           // setIsLogin(true);
-          setUserdata({Username: '', Message: 'Your password has been changed successfully! Please sign up later!'})
+          setUserdata({Username: '', Message: 'Your password has been changed successfully! Please login later!'})
           window.location.href = PrefixPage + '/login';
         }
     })

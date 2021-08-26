@@ -29,7 +29,7 @@ def forgotemail(email, username, usercode):
     from_password = 'IPORange413'
     to_email = email
 
-    href = 'http://3.14.225.184/#/resetpassword/' + usercode
+    href = 'https://www.iporange.com/#/resetpassword/' + usercode
     subject = 'Reset password at IPO Range'
     message = 'Dear {name},\n  You just requested to reset your password at IPORange.com, please use the link below to reset your password:\n <a href={href}>{link}</a>\n  If you were not asking for such a request, your password might be exposed to someone else and your account is in danger. Please reset your password ASAP to secure your account.\nBest regards,\nIPO Range team.'.format(name=username, href=href, link=href)
 
