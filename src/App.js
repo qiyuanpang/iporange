@@ -27,6 +27,7 @@ import AllUnderwritersPage from './pages/AllUnderwriters';
 import SearchResultsPage from './pages/SearchResults';
 import { Navbar, Nav, Form, Button, NavDropdown, FormControl, Container} from 'react-bootstrap';
 import {useCookies} from 'react-cookie';
+import Cookies from 'universal-cookie';
 // import 'bootstrap/dist/css/bootstrap.css';
 import FooterPage from './pages/Footer';
 import ContactUSPage from './pages/ContactUs';
@@ -58,7 +59,9 @@ function App(props) {
   const [isLogin, setIsLogin] = useState(false);
   const [searchdata, setSearchData] = useState([]);
   const [searchinput, setSearchInput] = useState('');
-  const [cookies, setCookie, removeCookie] = useCookies(['loginuser']);
+  // const [cookies, setCookie, removeCookie] = useCookies(['loginuser']);
+  const cookies = new Cookies()
+  // cookies.set('loginuser', '')
 
   useEffect(() => {
     document.title = "IPO Range"
@@ -66,7 +69,8 @@ function App(props) {
 
   useEffect(() => {
     // const loggedinuser = localStorage.getItem('loginuser');
-    const loggedinuser = cookies.loginuser
+    // const loggedinuser = cookies.loginuser
+    const loggedinuser = cookies.get('loginuser')
     // console.log(loggedinuser)
     if (loggedinuser) {
       // const founduser = JSON.parse(loggedinuser);
@@ -109,7 +113,9 @@ function App(props) {
           setUserdata({Email: email, Username: username, Password: password, Message: 'The email or username entered exists, please try agian.'})
         } else {
           // localStorage.setItem('loginuser', username)
-          setCookie('loginuser', existornot[0].Username)
+          // setCookie('loginuser', existornot[0].Username, {expires})
+          cookies.remove('loginuser')
+          cookies.set('loginuser', existornot[0].Username, {path: '/', maxAge:2592000})
           setIsLogin(true);
           window.location.href = '/';
         }
@@ -176,7 +182,9 @@ function App(props) {
           setUserdata({Email: email, Username: '', Password: password, Message: 'Email or password incorrect, please try agian.'})
         } else {
           // localStorage.setItem('loginuser', existornot[0].Username)
-          setCookie('loginuser', existornot[0].Username)
+          // setCookie('loginuser', existornot[0].Username, {expires})
+          cookies.remove('loginuser')
+          cookies.set('loginuser', existornot[0].Username, {path: '/', maxAge: 25920000})
           setIsLogin(true);
           window.location.href = '/';
         }
@@ -213,7 +221,8 @@ function App(props) {
 
   function Logout() {
     // localStorage.removeItem('loginuser');
-    removeCookie('loginuser')
+    cookies.remove('loginuser')
+    // removeCookie('loginuser')
     setLoginedUser('')
   }
 
