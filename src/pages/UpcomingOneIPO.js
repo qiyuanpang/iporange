@@ -134,7 +134,7 @@ function ShowAuth(text, num, auth, url) {
         return (
                 <Badge bg='light' text='dark' pill>
                     <a href={PrefixPage+url}>{text+"    "}</a>
-                    <span style={{color: '#566573'}}><a href='/login' style={{color: '#566573'}}>{'hiden'}</a></span>
+                    <span style={{color: '#566573'}}><a href='/login' style={{color: '#566573'}}>{'hidden'}</a></span>
                 </Badge>
         )
     }
@@ -190,7 +190,7 @@ function UpcomingOneIPOPage(props){
                 </div>
                 <div className="row" key={Symbol+"_row_2"}>
                     <div className="row" key={Symbol+"_in_row_3"}>
-                        <p>{"Similar IPOs:  "}{Auth ? similaripos.map(item => {return (<span key={"similar_"+Symbol+"_"+item}><a href={PrefixPage+'/ipos/'+item+'/overview'}>{`${item}    `}</a></span>)}) : <span key={"similar_"+Symbol+"_hiden"}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{"hiden"}</a></span>}</p>
+                        <p>{"Similar IPOs:  "}{Auth ? similaripos.map(item => {return (<span key={"similar_"+Symbol+"_"+item}><a href={PrefixPage+'/ipos/'+item+'/overview'}>{`${item}    `}</a></span>)}) : <span key={"similar_"+Symbol+"_hidden"}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{"hidden"}</a></span>}</p>
                     </div>
                 </div>
                 

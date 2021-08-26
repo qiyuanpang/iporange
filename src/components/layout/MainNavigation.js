@@ -5,6 +5,7 @@ import PrefixPage from '../../pages/Prefix';
 
 const Styles = styled.div`
 background-color: #EAFAF1;
+width: 120%;
 
 .navbar-brand {
     display: flex;

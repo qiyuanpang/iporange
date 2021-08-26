@@ -34,7 +34,7 @@ function ShowUnderwriters(text, num, auth, url) {
                 <td ><a href={PrefixPage+url} style={{color: '#17202A '}}>{text}</a></td>
                 <td >
                     <Badge bg='light' text='dark' pill>
-                        <span  style={{color: '#566573'}}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{'hiden'}</a></span>
+                        <span  style={{color: '#566573'}}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{'hidden'}</a></span>
                     </Badge>
                 </td>
             </Fragment>
@@ -88,7 +88,7 @@ function ShowAuth(text, num, auth, url) {
             <td>
                 <Badge bg='light' text='dark' pill>
                     <a href={PrefixPage+url}>{text+"    "}</a>
-                    <span style={{color: '#566573'}}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{'hiden'}</a></span>
+                    <span style={{color: '#566573'}}><a href={PrefixPage+'/login'} style={{color: '#566573'}}>{'hidden'}</a></span>
                 </Badge>
             </td>
         )
@@ -138,7 +138,7 @@ function Overview(props){
                         <tbody>
                             <tr key={props.symbol+"overview"+Math.floor(Math.random() * 98765).toString()}>
                                 <td><small className="text-muted" style={{color: '#6a6a6a'}}>Sector</small></td>
-                                {/* <td><Badge bg='light' text='dark' pill>{`${sector.sector} (${Auth ? sector.Return_6 : 'hiden'})`}</span></td> */}
+                                {/* <td><Badge bg='light' text='dark' pill>{`${sector.sector} (${Auth ? sector.Return_6 : 'hidden'})`}</span></td> */}
                                 {ShowAuth(sector.sector, sector.Return_6, Auth, "/sectors/"+sector.url)}
                             {/* </tr>
                             <tr key={props.symbol+"overview"+Math.floor(Math.random() * 98764).toString()}> */}

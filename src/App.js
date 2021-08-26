@@ -38,6 +38,7 @@ import styled from 'styled-components';
 import PrefixPage from './pages/Prefix';
 
 const Styles = styled.div`
+width: 120%;
 .App {
   height: 100vh;
   display: flex;
