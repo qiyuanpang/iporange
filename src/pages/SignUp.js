@@ -58,7 +58,7 @@ function SignUpPage(props) {
         <div className="center container">
             <card className="card">
                 <h3 >{props.Userdata.Message}</h3>
-                <Form onSubmit={SubmitByJSON} key="submmitform">
+                <Form onSubmit={SubmitByJSON} key="submmitform" method="POST">
                     <Form.Group className="mb-3" controlId="formEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" required ref={email} name="email"/>

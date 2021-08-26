@@ -95,8 +95,12 @@ function App(props) {
     const email = data.email;
     const username = data.username;
     const password = data.password;
-    const url = "/api/signup/" + email + "/" + username + "/" + password;
-    fetch(url).then(response => {
+    const url = "/api/signup";
+    fetch(url,{
+      method: 'POST', 
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    }).then(response => {
         return response.json()
     }).then(existornot => {
         // setIsExistent(existornot[0].EXIST);
@@ -155,11 +159,18 @@ function App(props) {
     
     const email = data.email;
     const password = data.password;
-    const url = "/api/login/" + email + "/" + password;
-    fetch(url).then(response => {
-        return response.json()
+    // const url = "/api/login/" + email + "/" + password;
+    const url = "/api/login";
+    console.log(data)
+    fetch('/api/login', {
+      method: 'POST', 
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    }).then(response => {
+        return response.json();
     }).then(existornot => {
         // setIsExistent(existornot[0].EXIST);
+        console.log(existornot)
         if (existornot[0].EXIST === 0) {
           setUserdata({Email: email, Username: '', Password: password, Message: 'Email or password incorrect, please try agian.'})
         } else {

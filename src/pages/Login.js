@@ -56,7 +56,7 @@ function LoginPage(props) {
         <div className="center container">
             <card className="card">
                 <h3 >{props.Userdata.Message}</h3>
-                <Form onSubmit={Login} key="loginform">
+                <Form onSubmit={Login} key="loginform" method="POST">
                     <Form.Group className="mb-3" controlId="formEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" required ref={email} name="email"/>
