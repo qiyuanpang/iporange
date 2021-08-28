@@ -184,7 +184,7 @@ function App(props) {
           // localStorage.setItem('loginuser', existornot[0].Username)
           // setCookie('loginuser', existornot[0].Username, {expires})
           cookies.remove('loginuser')
-          cookies.set('loginuser', existornot[0].Username, {path: '/', maxAge: 25920000})
+          cookies.set('loginuser', existornot[0].Username, {path: '/', maxAge: 2592000})
           setIsLogin(true);
           window.location.href = '/';
         }
