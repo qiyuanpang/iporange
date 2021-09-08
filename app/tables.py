@@ -110,14 +110,6 @@ class Quotes(Base):
     Volume = Column(Float)
     __table_args__ = (UniqueConstraint('Date', 'Symbol'),)
 
-class Userdata(Base):
-    __tablename__ = 'userdata'
-    id = Column(Integer, primary_key=True)
-    Email = Column(String)
-    Username = Column(String)
-    Usernamecode = Column(String)
-    Password = Column(String)
-
 class UnderwritersPerf(Base):
     __tablename__ = 'underwritersperf'
     id = Column(Integer, primary_key=True)

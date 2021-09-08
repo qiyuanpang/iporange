@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import {Route, Switch} from 'react-router-dom';
-// import {Route} from 'react-router';
+//import {Route} from 'react-router';
 // import React, {useState, useEffect} from 'react';
 // import './App.css';
 import {Fragment} from 'react';
@@ -231,7 +231,7 @@ function App(props) {
     <>
       <div className='main-container' >
         <Layout LoginedUser={loginedUser} key="layout" onLogout={Logout} onSearch={Search} className="justify-content-center"/>
-        <Switch key="switch">
+        <Switch>
           <Route path='/' key="route-home" exact>
             <HomePage key="home" />
           </Route>

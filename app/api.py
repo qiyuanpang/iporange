@@ -4,6 +4,7 @@ from sqlalchemy import create_engine, desc, asc, func
 from sqlalchemy.orm import sessionmaker
 from app.tables import *
 from app.onemails import *
+from app.user import Userdata
 from datetime import datetime, date
 from datetime import timedelta
 import requests

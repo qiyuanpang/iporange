@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {Router, browserHistory } from 'react-router';
+//import {Router, Route, browserHistory } from 'react-router';
 import { HashRouter as Router, useHistory} from 'react-router-dom';
 import './index.css';
 import App from './App';
@@ -8,13 +8,14 @@ import reportWebVitals from './reportWebVitals';
 import {CookiesProvider} from 'react-cookie';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FooterPage from './pages/Footer';
+import { createBrowserHistory } from "history";
 
-
+const history = createBrowserHistory();
 
 ReactDOM.render(
   [
   <CookiesProvider>
-    <Router key="browserrouter">
+    <Router key="browserrouter" >
         <App key="app"/>
     </Router>
   </CookiesProvider>,
